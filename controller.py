@@ -68,4 +68,19 @@ class Controller(QMainWindow, Ui_MainWindow):
     def clear(self):
         self.radioButton10.setChecked(True)
         self.labelTotal.setText('Bill Summary:')
+        self.checkLrgSoda.setChecked(False)
+        self.checkMedSoda.setChecked(False)
+        self.checkSmlSoda.setChecked(False)
+        self.checkChips.setChecked(False)
+        self.checkSideSalad.setChecked(False)
+        self.checkCFries.setChecked(False)
+        self.checkFries.setChecked(False)
+        self.checkSWSalad.setChecked(False)
+        self.checkGSalad.setChecked(False)
+        self.checkSChkSand.setChecked(False)
+        self.checkCSalad.setChecked(False)
+        self.checkChkSand.setChecked(False)
+        self.checkChsBurger.setChecked(False)
+        self.checkBurger.setChecked(False)
+
 
