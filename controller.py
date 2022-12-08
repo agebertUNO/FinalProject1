@@ -1,6 +1,7 @@
 from PyQt5.QtWidgets import *
 from view import *
 
+
 QtWidgets.QApplication.setAttribute(QtCore.Qt.AA_EnableHighDpiScaling, True)
 QtWidgets.QApplication.setAttribute(QtCore.Qt.AA_UseHighDpiPixmaps, True)
 
@@ -17,33 +18,61 @@ class Controller(QMainWindow, Ui_MainWindow):
         try:
             bill = float(0)
             if self.checkBurger.isChecked():
-                bill += 6.0
+                qty = self.spinBoxBur.value()
+                amount = 6.0 * qty
+                bill += amount
             if self.checkChsBurger.isChecked():
-                bill += 6.5
+                qty = self.spinBoxCBur.value()
+                amount = 6.5 * qty
+                bill += amount
             if self.checkChkSand.isChecked():
-                bill += 5.5
+                qty = self.spinBoxCSnd.value()
+                amount = 5.5 * qty
+                bill += amount
             if self.checkSChkSand.isChecked():
-                bill += 5.5
+                qty = self.spinBoxSCSnd.value()
+                amount = 5.5 * qty
+                bill += amount
             if self.checkCSalad.isChecked():
-                bill += 5.0
+                qty = self.spinBoxCSalad.value()
+                amount = 5.0 * qty
+                bill += amount
             if self.checkGSalad.isChecked():
-                bill += 5.0
+                qty = self.spinBoxGSalad.value()
+                amount = 5.0 * qty
+                bill += amount
             if self.checkSWSalad.isChecked():
-                bill += 5.5
+                qty = self.spinBoxSWSalad.value()
+                amount = 5.5 * qty
+                bill += amount
             if self.checkFries.isChecked():
-                bill += 1.25
+                qty = self.spinBoxFries.value()
+                amount = 1.25 * qty
+                bill += amount
             if self.checkCFries.isChecked():
-                bill += 1.75
+                qty = self.spinBoxCFries.value()
+                amount = 1.75 * qty
+                bill += amount
             if self.checkSideSalad.isChecked():
-                bill += 2.0
+                qty = self.spinBoxSideSalad.value()
+                amount = 2.0 * qty
+                bill += amount
             if self.checkChips.isChecked():
-                bill += 1.75
+                qty = self.spinBoxChips.value()
+                amount = 1.75 * qty
+                bill += amount
             if self.checkSmlSoda.isChecked():
-                bill += 1.0
+                qty = self.spinBoxSml.value()
+                amount = 1.0 * qty
+                bill += amount
             if self.checkMedSoda.isChecked():
-                bill += 1.5
+                qty = self.spinBoxMed.value()
+                amount = 1.5 * qty
+                bill += amount
             if self.checkLrgSoda.isChecked():
-                bill += 2.
+                qty = self.spinBoxLrg.value()
+                amount = 2.0 * qty
+                bill += amount
             checked = [self.buttonGroup.buttons()[x].isChecked() for x in range(len(self.buttonGroup.buttons()))].index(
                 True)
             if checked == 0:
@@ -68,19 +97,4 @@ class Controller(QMainWindow, Ui_MainWindow):
     def clear(self):
         self.radioButton10.setChecked(True)
         self.labelTotal.setText('Bill Summary:')
-        self.checkLrgSoda.setChecked(False)
-        self.checkMedSoda.setChecked(False)
-        self.checkSmlSoda.setChecked(False)
-        self.checkChips.setChecked(False)
-        self.checkSideSalad.setChecked(False)
-        self.checkCFries.setChecked(False)
-        self.checkFries.setChecked(False)
-        self.checkSWSalad.setChecked(False)
-        self.checkGSalad.setChecked(False)
-        self.checkSChkSand.setChecked(False)
-        self.checkCSalad.setChecked(False)
-        self.checkChkSand.setChecked(False)
-        self.checkChsBurger.setChecked(False)
-        self.checkBurger.setChecked(False)
-
 
