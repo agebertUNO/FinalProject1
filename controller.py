@@ -14,6 +14,8 @@ class Controller(QMainWindow, Ui_MainWindow):
         self.pushTotal.clicked.connect(lambda: self.total())
         self.pushClear.clicked.connect(lambda: self.clear())
 
+    # Total push button, calculates total of all selected menu items
+    # Counts for quantity requested in spin box
     def total(self):
         try:
             bill = float(0)
@@ -94,6 +96,7 @@ class Controller(QMainWindow, Ui_MainWindow):
         except ValueError:
             self.labelTotal.setText('At least one menu item needs to be selected.')
 
+    # Clears all selected items to 'submit' a new order.
     def clear(self):
         self.radioButton10.setChecked(True)
         self.labelTotal.setText('Bill Summary:')
