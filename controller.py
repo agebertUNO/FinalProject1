@@ -17,6 +17,11 @@ class Controller(QMainWindow, Ui_MainWindow):
     # Total push button, calculates total of all selected menu items
     # Counts for quantity requested in spin box
     def total(self):
+        '''
+        Checks for all checked items and quantity, which tip percentage is selected.
+        Calculates total of all items, the 10% tax, and selected tip
+        :return: Returns total of the bill with tax and tip and presents it in the total box.
+        '''
         try:
             bill = float(0)
             if self.checkBurger.isChecked():
@@ -96,7 +101,7 @@ class Controller(QMainWindow, Ui_MainWindow):
         except ValueError:
             self.labelTotal.setText('At least one menu item needs to be selected.')
 
-    # Clears all selected items to 'submit' a new order.
+    # Clears all selected items and quantity to 'submit' a new order.
     def clear(self):
         self.radioButton10.setChecked(True)
         self.labelTotal.setText('Bill Summary:')
